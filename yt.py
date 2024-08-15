@@ -1,3 +1,6 @@
+#Author: Damian Lopez
+#Date: 08/15/2024
+
 import sys
 import yt_dlp
 
