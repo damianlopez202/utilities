@@ -1,12 +1,12 @@
 import sys
 import yt_dlp
 
-# Function to download YouTube video using yt-dlp
+# download YT
 def download_youtube_video(url, output_name):
     ydl_opts = {
-        'format': 'bestvideo+bestaudio/best',  # Download the best video and audio available
-        'outtmpl': f'{output_name}.%(ext)s',   # Save the video with the given output name and proper extension
-        'merge_output_format': 'mp4'           # Ensure the output is in MP4 format
+        'format': 'bestvideo+bestaudio/best',  # best quality
+        'outtmpl': f'{output_name}.%(ext)s',   # save
+        'merge_output_format': 'mp4'           # format with mp4
     }
     
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
@@ -14,9 +14,8 @@ def download_youtube_video(url, output_name):
         ydl.download([url])
         print(f"Download completed. Saved as '{output_name}.mp4'")
 
-# Main function to download video
 def main():
-    # Check if arguments are provided
+    # learn how to use arguments scrub
     if len(sys.argv) != 3:
         print("Usage: python script.py <YouTube_URL> <Output_Name>")
         sys.exit(1)
@@ -24,7 +23,7 @@ def main():
     url = sys.argv[1]
     output_name = sys.argv[2]
     
-    # Download the video
+    # download
     download_youtube_video(url, output_name)
 
 if __name__ == "__main__":
